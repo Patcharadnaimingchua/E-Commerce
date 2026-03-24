@@ -17,7 +17,7 @@ const productRoutes = require('./routes/product.routes');
 const categoryRoutes = require('./routes/category.routes');
 const cartRoutes = require('./routes/cart.routes');
 const orderRoutes = require('./routes/order.routes');
-const paymentRoutes = require('./routes/payment');
+const paymentRoutes = require('./routes/payment.routes');
 const reviewRoutes = require('./routes/review.routes');
 
 app.use('/auth', authRoutes);
