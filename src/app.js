@@ -4,12 +4,12 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 app.use(cors({
-    origin: [
-  "http://localhost:5173",
-  "https://patcharadnaimingchua.github.io",
-  "https://e-commerce.vercel.app" // ใส่ domain จริงหลัง deploy
-],
-    credentials: true
+  origin: [
+    "http://localhost:5173",
+    "https://patcharadnaimingchua.github.io",
+    "https://e-commerce-jet-two-95.vercel.app"
+  ],
+  credentials: true
 }));
 
 app.use(express.json());
