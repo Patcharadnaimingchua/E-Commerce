@@ -1,6 +1,11 @@
 require("dotenv").config();
-const express = require ('express');
-const cors = require('cors')
+const express = require('express');
+app.use(cors({
+    origin: [
+        "https://patcharadnaimingchua.github.io"
+    ],
+    credentials: true
+}));
 const app = express();
 const authRoutes = require('./routes/auth.routes')
 const productRoutes = require('./routes/product.routes')
@@ -19,12 +24,16 @@ app.use('/cart', cartRoutes)
 app.use('/orders', orderRoutes)
 app.use('/payments', paymentRoutes)
 app.use('/reviews', reviewRoutes)
-app.get ("/", (req, res) => {
+app.get("/", (req, res) => {
     res.send("Ecommerce API running")
 })
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+    console.log(`Server running on port ${PORT}`);
+});
+app.use((err, req, res, next) => {
+    console.error(err);
+    res.status(500).json({ message: "Internal Server Error" });
 });
