@@ -1,4 +1,4 @@
-const API = "http://localhost:3000"
+const API = "https://ecommerce-backend-ep03.onrender.com"
 
 export async function login(data){
  const res = await fetch(`${API}/auth/login`,{
