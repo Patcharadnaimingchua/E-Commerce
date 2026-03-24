@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 
-const API = "http://localhost:3000";
+const API = "https://ecommerce-backend-ep03.onrender.com";
 
 // ─── Helpers ────────────────────────────────────────────────────────────────
 const authHeader = (token) => ({
